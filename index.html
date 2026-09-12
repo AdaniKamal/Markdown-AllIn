@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown Studio</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="topbar" aria-label="Main navigation">
+      <a class="brand" href="#top">Markdown Studio</a>
+      <div class="nav-links">
+        <a href="#viewer">Viewer</a>
+        <a href="#editor">Editor</a>
+        <a href="#tree">Tree</a>
+        <a href="#wiki">Wiki</a>
+      </div>
+    </nav>
+
+    <section class="hero-content" id="top">
+      <p class="eyebrow">Simple Markdown toolkit</p>
+      <h1>Preview, structure, and write Markdown in one calm workspace.</h1>
+      <p class="hero-copy">
+        Upload a Markdown file, paste raw Markdown, generate a heading tree, or write with live preview.
+        Nothing is stored, and everything runs in your browser.
+      </p>
+      <div class="hero-actions">
+        <a class="button primary" href="#editor">Start Writing</a>
+        <a class="button secondary" href="#wiki">View Markdown Wiki</a>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="section viewer-section" id="viewer">
+      <div class="section-heading">
+        <p class="eyebrow">Markdown viewer</p>
+        <h2>Upload or paste Markdown</h2>
+        <p>Use this area when you already have Markdown and want a quick preview.</p>
+      </div>
+
+      <div class="viewer-grid">
+        <div class="panel input-panel">
+          <div class="panel-header">
+            <h3>Input</h3>
+            <label class="file-button">
+              Upload .md
+              <input type="file" id="fileInput" accept=".md,.markdown,.txt">
+            </label>
+          </div>
+          <textarea id="viewerInput" spellcheck="false" aria-label="Markdown input"></textarea>
+          <div class="panel-actions">
+            <button type="button" id="renderViewer">Preview Markdown</button>
+            <button type="button" class="ghost" id="clearViewer">Clear</button>
+          </div>
+        </div>
+
+        <article class="panel preview-panel">
+          <div class="panel-header">
+            <h3>Preview</h3>
+            <span class="status-pill" id="viewerStatus">Ready</span>
+          </div>
+          <div class="markdown-preview" id="viewerPreview"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section editor-section" id="editor">
+      <div class="section-heading">
+        <p class="eyebrow">Live editor</p>
+        <h2>Write left, preview right</h2>
+        <p>Formatting buttons insert common Markdown syntax so beginners can learn while writing.</p>
+      </div>
+
+      <div class="toolbar" aria-label="Markdown formatting toolbar">
+        <button type="button" data-action="heading1" title="Heading 1">H1</button>
+        <button type="button" data-action="heading2" title="Heading 2">H2</button>
+        <button type="button" data-action="heading3" title="Heading 3">H3</button>
+        <button type="button" data-action="bold">Bold</button>
+        <button type="button" data-action="italic">Italic</button>
+        <button type="button" data-action="quote">' Quote</button>
+        <button type="button" data-action="bullet">Bullets</button>
+        <button type="button" data-action="number">Numbering</button>
+        <button type="button" data-action="code">Code</button>
+        <button type="button" data-action="table">Table</button>
+        <button type="button" data-action="link">Link</button>
+      </div>
+
+      <div class="editor-grid">
+        <div class="panel">
+          <div class="panel-header">
+            <h3>Write</h3>
+            <span class="status-pill" id="wordCount">0 words</span>
+          </div>
+          <textarea id="editorInput" spellcheck="false" aria-label="Live Markdown editor"></textarea>
+        </div>
+
+        <article class="panel">
+          <div class="panel-header">
+            <h3>Live Preview</h3>
+            <button type="button" class="ghost small" id="copyMarkdown">Copy Markdown</button>
+          </div>
+          <div class="markdown-preview" id="editorPreview"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section tree-section" id="tree">
+      <div class="section-heading">
+        <p class="eyebrow">Markdown tree structure generator</p>
+        <h2>Turn headings into a document map</h2>
+        <p>Write or paste Markdown headings on the left and copy the generated tree into your README.</p>
+      </div>
+
+      <div class="tree-layout">
+        <div class="panel tree-panel">
+          <div class="panel-header">
+            <h3>Markdown Headings</h3>
+            <button type="button" class="ghost small" id="loadEditorTree">Use Live Editor</button>
+          </div>
+          <textarea id="treeInput" spellcheck="false" aria-label="Editable Markdown headings for tree generator"></textarea>
+        </div>
+        <div class="panel tree-panel">
+          <div class="panel-header">
+            <h3>ASCII Tree</h3>
+            <button type="button" class="ghost small" id="copyTree">Copy Tree</button>
+          </div>
+          <pre id="treeOutput" aria-live="polite"></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wiki-section" id="wiki">
+      <div class="section-heading">
+        <p class="eyebrow">Markdown wiki</p>
+        <h2>Quick reference for common syntax</h2>
+        <p>Beginner-friendly examples for headings, tables, point form, bold, italic, quote, code, and links.</p>
+      </div>
+
+      <div class="wiki-grid" id="wikiGrid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>AdaniKamal &copy; 2026</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
