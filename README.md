@@ -1,6 +1,6 @@
-# Markdown Studio
+# Markdown All In
 
-Markdown Studio is a lightweight website for previewing, writing, and learning Markdown. It does not require signup, a backend, or a database. Users can upload a Markdown file, paste Markdown text, write with live preview, generate a heading tree, and refer to a beginner-friendly Markdown wiki.
+Markdown All In is a lightweight website for previewing, writing, and learning Markdown. It does not require signup, a backend, or a database. Users can upload a Markdown file, paste Markdown text, write with live preview, generate a heading tree, and refer to a beginner-friendly Markdown wiki.
 
 ## Project Purpose
 
